@@ -8,12 +8,13 @@ namespace QueueAPI
 {
     class Program
     {
+        static int head = 0, tail = 0, count = 0;
         static void Main(string[] args)
         {
             byte MaxArraySize = 255;
             int ArraySize = GetUserArraySize(MaxArraySize);
             int[] UserArray = new int[ArraySize];
-            int head=0, tail=0, count=0, UserValue = 0;
+            int UserValue = 0, decResult=0;
             string command;
             do
             {
@@ -23,7 +24,7 @@ namespace QueueAPI
                     case "enq":
                         Console.WriteLine("Put the integer value for enqueue");
                         UserValue = Convert.ToInt32(Console.ReadLine());
-                        if (Enqueue(UserArray, ref tail, ref count, UserValue))
+                        if (Enqueue(UserArray, UserValue))
                         {
                             Console.WriteLine("Success");
                         }
@@ -33,13 +34,20 @@ namespace QueueAPI
                         }
                         break;
                     case "deq":
-                        Console.WriteLine(Dequeue(UserArray, ref head, ref count));
+                        if (Dequeue(UserArray, out decResult))
+                        {
+                            Console.WriteLine(decResult);
+                        }
+                        else
+                        {
+                            Console.WriteLine("The queue is empty");
+                        }
                         break;
                     case "isempty":
-                        Console.WriteLine(IsEmpty(count));
+                        Console.WriteLine(IsEmpty());
                         break;
                     case "isfull":
-                        Console.WriteLine(IsFull(UserArray.Length,count));
+                        Console.WriteLine(IsFull(UserArray.Length));
                         break;
                     case "exit":
                         break;
@@ -66,9 +74,9 @@ namespace QueueAPI
             return (size);
         }
 
-        static bool Enqueue(int[] matrix, ref int tail, ref int count, int value)  //method puts the user's value in the queue. 
+        static bool Enqueue(int[] matrix, int value)  //method puts the user's value in the queue. 
         {
-            if (IsFull(matrix.Length,count))
+            if (IsFull(matrix.Length))
             {
                 return (false);                                                    //return false if queue if full
             }
@@ -85,12 +93,13 @@ namespace QueueAPI
             }
         }
 
-        static int? Dequeue(int[] matrix, ref int head, ref int count)  //method gets the user's value from the queue.
+        static bool Dequeue(int[] matrix, out int result)  //method gets the user's value from the queue.
         {
             int pointer = head;
-            if (IsEmpty(count))
-            {
-                return (null);                                          //return NULL if queue is empty
+            result = 0;
+            if (IsEmpty())
+            {   
+                return (false);                                          //return NULL if queue is empty
             }
             else
             {
@@ -100,11 +109,12 @@ namespace QueueAPI
                 {
                     head = 0;
                 }
-                return (matrix[pointer]);
+                result = matrix[pointer];
+                return (true);
             }
         }
 
-        static bool IsFull (int length, int count)                      
+        static bool IsFull (int length)                      
         {
             if (count==length)
             {
@@ -116,7 +126,7 @@ namespace QueueAPI
             }
         }
 
-        static bool IsEmpty(int count)
+        static bool IsEmpty()
         {
             if (count == 0)
             {

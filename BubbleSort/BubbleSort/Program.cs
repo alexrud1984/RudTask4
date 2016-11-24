@@ -43,9 +43,9 @@ namespace BubbleSort
 
         static void DoSwap(int[] matrix, int first, int second) //swap sells in the matrix with given indexes
         {
-            matrix[first] += matrix[second];
-            matrix[second] = matrix[first] - matrix[second];
-            matrix[first] -= matrix[second];
+            int bufferValue = matrix[first];
+            matrix[first] = matrix[second];
+            matrix[second] = bufferValue;
         }
 
         static void BubbleSort(int[] matrix) //sort given matrix using bubble algorithm

@@ -43,9 +43,9 @@ namespace InsertionSort
 
         static void DoSwap(int[] matrix, int first, int second) //swap sells in the matrix with given indexes
         {
-            matrix[first] += matrix[second];
-            matrix[second] = matrix[first] - matrix[second];
-            matrix[first] -= matrix[second];
+            matrix[first] ^= matrix[second];
+            matrix[second] = matrix[first] ^ matrix[second];
+            matrix[first] ^= matrix[second];
         }
 
         static void InsertionSort(int[] matrix)                             //sort given matrix using insertion algorithm

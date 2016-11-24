@@ -8,13 +8,14 @@ namespace StackAPI
 {
     class Program
     {
+        static int top=0;
+        static int[] matrix;
         static void Main(string[] args)
         {
             byte MaxArraySize = 255;
             int ArraySize = GetUserArraySize(MaxArraySize);
-            int [] UserArray = new int[ArraySize];
-            int top = 0;
-            int UserValue = 0;
+            matrix = new int[ArraySize];
+            int UserValue = 0, result=0;
             string command;
             do
             {
@@ -24,7 +25,7 @@ namespace StackAPI
                     case "push":
                         Console.WriteLine("Put the integer value for push");
                         UserValue = Convert.ToInt32(Console.ReadLine());
-                        if (StackPush(UserArray, UserValue, ref top))
+                        if (StackPush(UserValue))
                         {
                             Console.WriteLine("Success");
                         }
@@ -34,16 +35,30 @@ namespace StackAPI
                         }
                         break;
                     case "pop":
-                        Console.WriteLine(StackPop(UserArray, ref top));
+                        if (StackPop(out result))
+                        {
+                            Console.WriteLine(result);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Stack is empty");
+                        }
                         break;
                     case "isempty":
-                        Console.WriteLine(StakIsEmpty(top));
+                        Console.WriteLine(StakIsEmpty());
                         break;
                     case "isfull":
-                        Console.WriteLine(StackIsFull(UserArray, top));
+                        Console.WriteLine(StackIsFull());
                         break;
                     case "peek":
-                        Console.WriteLine(StackPeek(UserArray, top));
+                        if (StackPeek(out result))
+                        {
+                            Console.WriteLine(result);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Stack is empty");
+                        }
                         break;
                     case "exit":
                         break;
@@ -70,7 +85,7 @@ namespace StackAPI
             return (size);
         }
 
-        static bool StackPush(int [] matrix, int pushValue, ref int top) //push the value to the next free sell
+        static bool StackPush(int pushValue) //push the value to the next free sell
         {
             if (top == matrix.Length)
             {
@@ -84,19 +99,21 @@ namespace StackAPI
             }
         }
 
-        static int? StackPop(int [] matrix, ref int top)    //return top value in the stack
+        static bool StackPop(out int result)    //return top value in the stack
         {
             if (top == 0)
             {
-                return (null);                              //return null if stack is empty
+                result = 0;
+                return (false);                              //return null if stack is empty
             }
             else
             {
-                return (matrix[--top]);                     //return top value and decrease pointer
+                result=matrix[--top];
+                return (true);                     //return top value and decrease pointer
             }
         }
 
-        static bool StakIsEmpty(int top)               //return true if stack is empty
+        static bool StakIsEmpty()               //return true if stack is empty
         {
             if (top == 0)
             {
@@ -108,7 +125,7 @@ namespace StackAPI
             }
         }
 
-        static bool StackIsFull(int [] matrix, int top) //return true if stack is full
+        static bool StackIsFull() //return true if stack is full
         {
             if (top == matrix.Length)
             {
@@ -120,15 +137,17 @@ namespace StackAPI
             }
         }
 
-        static int? StackPeek(int [] matrix, int top) //return top value without deletion
+        static bool StackPeek(out int result) //return top value without deletion
         {
+            result = 0;
             if (top == 0)
             {
-                return (null);
+                return (false);
             }
             else
             {
-                return (matrix[top-1]);
+                result = matrix[top - 1];
+                return (true);
             }
         }
     }

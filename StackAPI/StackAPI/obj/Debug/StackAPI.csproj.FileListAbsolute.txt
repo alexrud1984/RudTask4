@@ -4,3 +4,9 @@ D:\Projects\StackAPI\StackAPI\bin\Debug\StackAPI.pdb
 D:\Projects\StackAPI\StackAPI\obj\Debug\StackAPI.exe
 D:\Projects\StackAPI\StackAPI\obj\Debug\StackAPI.pdb
 D:\Projects\StackAPI\StackAPI\obj\Debug\StackAPI.csprojResolveAssemblyReference.cache
+D:\Projects\RudTask4\StackAPI\StackAPI\bin\Debug\StackAPI.exe.config
+D:\Projects\RudTask4\StackAPI\StackAPI\obj\Debug\StackAPI.exe
+D:\Projects\RudTask4\StackAPI\StackAPI\obj\Debug\StackAPI.pdb
+D:\Projects\RudTask4\StackAPI\StackAPI\bin\Debug\StackAPI.exe
+D:\Projects\RudTask4\StackAPI\StackAPI\bin\Debug\StackAPI.pdb
+D:\Projects\RudTask4\StackAPI\StackAPI\obj\Debug\StackAPI.csprojResolveAssemblyReference.cache

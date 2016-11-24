@@ -4,3 +4,9 @@ D:\Projects\BubbleSort\BubbleSort\bin\Debug\BubbleSort.exe
 D:\Projects\BubbleSort\BubbleSort\bin\Debug\BubbleSort.pdb
 D:\Projects\BubbleSort\BubbleSort\obj\Debug\BubbleSort.exe
 D:\Projects\BubbleSort\BubbleSort\obj\Debug\BubbleSort.pdb
+D:\Projects\RudTask4\BubbleSort\BubbleSort\bin\Debug\BubbleSort.exe.config
+D:\Projects\RudTask4\BubbleSort\BubbleSort\obj\Debug\BubbleSort.exe
+D:\Projects\RudTask4\BubbleSort\BubbleSort\obj\Debug\BubbleSort.pdb
+D:\Projects\RudTask4\BubbleSort\BubbleSort\bin\Debug\BubbleSort.exe
+D:\Projects\RudTask4\BubbleSort\BubbleSort\bin\Debug\BubbleSort.pdb
+D:\Projects\RudTask4\BubbleSort\BubbleSort\obj\Debug\BubbleSort.csprojResolveAssemblyReference.cache

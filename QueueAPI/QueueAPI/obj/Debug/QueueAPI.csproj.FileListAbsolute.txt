@@ -4,3 +4,9 @@ D:\Projects\QueueAPI\QueueAPI\bin\Debug\QueueAPI.pdb
 D:\Projects\QueueAPI\QueueAPI\obj\Debug\QueueAPI.csprojResolveAssemblyReference.cache
 D:\Projects\QueueAPI\QueueAPI\obj\Debug\QueueAPI.exe
 D:\Projects\QueueAPI\QueueAPI\obj\Debug\QueueAPI.pdb
+D:\Projects\RudTask4\QueueAPI\QueueAPI\bin\Debug\QueueAPI.exe.config
+D:\Projects\RudTask4\QueueAPI\QueueAPI\obj\Debug\QueueAPI.exe
+D:\Projects\RudTask4\QueueAPI\QueueAPI\obj\Debug\QueueAPI.pdb
+D:\Projects\RudTask4\QueueAPI\QueueAPI\bin\Debug\QueueAPI.exe
+D:\Projects\RudTask4\QueueAPI\QueueAPI\bin\Debug\QueueAPI.pdb
+D:\Projects\RudTask4\QueueAPI\QueueAPI\obj\Debug\QueueAPI.csprojResolveAssemblyReference.cache
